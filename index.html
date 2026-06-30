@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>给你的小互动</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffd6e8,#fff7fb);display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden}
+.card{background:#fff;padding:28px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.15);width:90%;max-width:420px;text-align:center}
+button{padding:12px 20px;margin:8px;border:none;border-radius:12px;font-size:18px;cursor:pointer}
+.ok{background:#ff5b96;color:#fff}
+.no{background:#888;color:#fff;position:fixed}
+.heart{position:fixed;font-size:24px;animation:up 3s linear forwards}
+@keyframes up{from{transform:translateY(0);opacity:1}to{transform:translateY(-220px);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card" id="app">
+<h2>🥺 我好像把你惹生气了…</h2>
+<p>可以给我一个补救的机会吗？</p>
+<button class="ok" onclick="movie()">😊 可以</button>
+</div>
+<button id="no" class="no">😤 不可以</button>
+<script>
+const app=document.getElementById("app");
+const no=document.getElementById("no");
+let count=0;
+function move(){if(count<20){no.style.left=Math.random()*(innerWidth-120)+"px";no.style.top=Math.random()*(innerHeight-60)+"px";count++;}}
+move();
+no.onmouseover=move;
+no.onclick=()=>{if(count<20){move();return;}repair();}
+function hearts(){for(let i=0;i<15;i++){let h=document.createElement("div");h.className="heart";h.textContent="💖";h.style.left=Math.random()*100+"vw";h.style.top="90vh";document.body.appendChild(h);setTimeout(()=>h.remove(),3000);}}
+function movie(){
+no.style.display="none";
+app.innerHTML=`<h2>🎬 那今晚一起看电影吗？</h2>
+<button class="ok" onclick="watch()">🎬 看</button>
+<button onclick="notwatch()">🙈 不看</button>`;
+}
+function watch(){
+app.innerHTML=`<h2>🍿 看什么？</h2>
+<button class="ok" onclick="done('👻 恐怖片')">👻 恐怖片</button>
+<button class="ok" onclick="done('😱 惊悚片')">😱 惊悚片</button>`;
+}
+function notwatch(){
+app.innerHTML=`<h2>😂 不看也得看！</h2>
+<p>（开玩笑啦～）</p>
+<button class="ok" onclick="watch()">好吧 😂</button>`;
+}
+function repair(){
+no.style.display="none";
+app.innerHTML=`<h2>😅 终于点到了！</h2>
+<p>那你想让我怎么补救？</p>
+<button class="ok" onclick="done('🍣 请你吃漂亮饭')">🍣 请你吃漂亮饭！</button><br>
+<button class="ok" onclick="done('💄 给你买化妆品')">💄 给你买化妆品！</button><br>
+<button class="ok" onclick="done('💅 请你做美甲')">💅 请你做美甲！</button>`;
+}
+function done(x){
+hearts();
+app.innerHTML=`<h2>🎉 成交！</h2><p>你选择了：<b>${x}</b></p><p>我会兑现的 😊</p>`;
+}
+</script>
+</body>
+</html>
