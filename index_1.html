@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>补救小游戏 V2</title>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#ffd8e8,#fff);overflow:hidden}
+#box{max-width:430px;margin:40px auto;background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.15);text-align:center}
+button{padding:12px 18px;margin:8px;border:none;border-radius:12px;font-size:18px;cursor:pointer}
+.p{background:#ff5f98;color:#fff}.g{background:#ddd}
+#no{position:fixed}
+.star{position:fixed;font-size:22px;animation:fly 3s linear forwards}
+@keyframes fly{from{transform:translateY(0);opacity:1}to{transform:translateY(-260px);opacity:0}}
+</style></head><body>
+<div id="box">
+<h2>🥺 我好像把你惹生气了…</h2>
+<p>可以给我一个补救的机会吗？</p>
+<button class="p" onclick="movie()">😊 给你一次机会</button>
+</div>
+<button class="g" id="no">😤 不给</button>
+<script>
+const box=document.getElementById('box');
+const no=document.getElementById('no');
+let c=0;
+const txt=["🥺 真不给吗","😂 再追一下","🤏 差一点","😭 我知道错了","😶 快抓到我了","🥹 再试一次","🤣 你太执着了"];
+function mv(){if(c<20){no.style.left=Math.random()*(innerWidth-120)+'px';no.style.top=Math.random()*(innerHeight-60)+'px';no.textContent=txt[c%txt.length];c++;}}
+mv();
+no.onmouseover=mv;
+no.onclick=()=>{if(c<20){mv();return;}repair();}
+function stars(){for(let i=0;i<18;i++){let s=document.createElement('div');s.className='star';s.textContent='⭐';s.style.left=Math.random()*100+'vw';s.style.top='90vh';document.body.appendChild(s);setTimeout(()=>s.remove(),3000);}}
+function movie(){
+no.style.display='none';
+box.innerHTML=`<h2>🎬 今晚一起看电影吗？</h2>
+<button class='p' onclick='watch()'>🎬 看</button>
+<button class='g' onclick='nw1()'>🙈 不看</button>`;
+}
+function nw1(){
+box.innerHTML=`<h2>😏 真的不看？</h2><p>再考虑一下？</p>
+<button class='g' onclick='nw2()'>确定不看</button>`;
+}
+function nw2(){
+box.innerHTML=`<h2>😂 那换个问法</h2><p>陪我出去一下？</p>
+<button class='p' onclick='watch()'>去吧</button>
+<button class='g' id='run' onmouseover='run()' onclick='run()'>还是不去</button>`;
+}
+function run(){
+let b=document.getElementById('run');
+if(!b)return;
+b.style.position='fixed';
+b.style.left=Math.random()*(innerWidth-120)+'px';
+b.style.top=Math.random()*(innerHeight-60)+'px';
+setTimeout(()=>{box.innerHTML=`<h2>😆 好啦不开玩笑</h2><button class='p' onclick='watch()'>🍿 那就去</button>`;},3500);
+}
+function watch(){
+box.innerHTML=`<h2>🍿 看什么？</h2>
+<button class='p' onclick='pop("👻 恐怖片")'>👻 恐怖片</button>
+<button class='p' onclick='pop("😱 惊悚片")'>😱 惊悚片</button>`;
+}
+function pop(t){
+box.innerHTML=`<h2>${t}</h2><p>爆米花要吗？</p>
+<button class='p' onclick='drink()'>🍿 要</button>
+<button class='g' onclick='drink()'>不用</button>`;
+}
+function drink(){
+box.innerHTML=`<h2>🥤 饮料呢？</h2>
+<button class='p' onclick='end("🥤 可乐")'>可乐</button>
+<button class='p' onclick='end("🧃 果汁")'>果汁</button>
+<button class='p' onclick='end("💧 白水")'>白水</button>`;
+}
+function repair(){
+no.style.display='none';
+box.innerHTML=`<h2>😅 好吧你赢了</h2><p>想让我怎么补救？</p>
+<button class='p' onclick='repair2("🍣 请你吃漂亮饭")'>🍣 请你吃漂亮饭</button><br>
+<button class='p' onclick='repair2("💄 给你买化妆品")'>💄 给你买化妆品</button><br>
+<button class='p' onclick='repair2("💅 请你做美甲")'>💅 请你做美甲</button>`;
+}
+function repair2(x){
+box.innerHTML=`<h2>${x}</h2><p>那是不是没那么生气了？</p>
+<button class='p' onclick='end("${x}")'>😊 有一点点</button>
+<button class='g' onclick='more()'>😒 还没有</button>`;
+}
+function more(){
+box.innerHTML=`<h2>🥹 我继续努力</h2>
+<button class='p' onclick='end("☕ 咖啡")'>☕ 请你喝咖啡</button>
+<button class='p' onclick='end("🍰 甜品")'>🍰 请你吃甜品</button>
+<button class='p' onclick='end("🧸 抓娃娃")'>🧸 请你抓娃娃</button>`;
+}
+function end(x){
+document.body.style.background='linear-gradient(#08152b,#1c325a)';
+stars();
+box.innerHTML=`<h2 style="color:#ffd54f">🌙 那就这么说定啦！</h2><p>最终选择：${x}</p><p>⭐ 不准放我鸽子～</p>`;
+}
+</script></body></html>
