@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#171116">
+<title>8.22 · 给张贞妮</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div>
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+<div class="topline"><span id="progress"></span></div>
+
+<section class="screen active" id="home">
+  <div class="hero">
+    <div class="micro">A PRIVATE LITTLE PLACE · 8.22</div>
+    <div class="date">08 <i>/</i> 22</div>
+    <h1>写给<br><em>张贞妮</em>的一个小地方。</h1>
+    <p>这里没有什么特别的东西。<br>只是想把一些关于你的、关于我们的，留在这里。</p>
+    <div class="birthday">
+      <div class="label">输入你的生日</div>
+      <div class="date-fields">
+        <input id="month" type="number" min="1" max="12" placeholder="08">
+        <span>/</span>
+        <input id="day" type="number" min="1" max="31" placeholder="22">
+      </div>
+      <button onclick="openSecret()">进入 <b>→</b></button>
+      <small id="error">好像还不是这个日期。</small>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="intro">
+  <div class="content center">
+    <div class="chapter">01</div>
+    <div class="micro">FOR YOU</div>
+    <h2>原来是你。</h2>
+    <div class="rule"></div>
+    <p class="large">这是为你留下的<br>一个很小、很安静的世界。</p>
+    <p class="pink">张贞妮，生日快乐。</p>
+    <p class="muted">希望你打开它的时候，会有一点点开心。</p>
+    <button class="textbtn" onclick="go('about')">继续 <b>→</b></button>
+  </div>
+</section>
+
+<section class="screen" id="about">
+  <div class="content narrow">
+    <div class="chapter">02</div><div class="micro">THE BEGINNING</div>
+    <h2>故事是从哪里开始的？</h2>
+    <article class="story">
+      <div class="micro">THE FIRST DAY</div>
+      <p>第一次见到你的时候，是你来到这个岛上工作的第一天。</p>
+      <p>那天你戴着帽子，走进了餐厅。</p>
+      <p>而那时候的我，装得很高冷，甚至没有主动和你说话。</p>
+      <div class="rule left"></div>
+      <p class="pink">如果那时候的我知道，后来会发生这么多事情……</p>
+      <p>大概不会想到，那个戴着帽子走进餐厅的人，后来会变成一个对我来说很特别的人。</p>
+    </article>
+    <button class="textbtn" onclick="go('memories')">下一页 <b>→</b></button>
+  </div>
+</section>
+
+<section class="screen" id="memories">
+  <div class="content">
+    <div class="chapter">03</div><div class="micro">OUR MEMORIES</div>
+    <h2>一些我不想忘记的瞬间。</h2>
+    <div class="memories">
+      <article><span>01</span><h3>第一次谈心</h3><p>从那一天开始，我发现我们之间不只是认识而已。原来有些话，是可以慢慢说给彼此听的。</p></article>
+      <article><span>02</span><h3>第一次靠近</h3><p>距离变近以后，好像连空气都变得不一样了。有些心情，不需要说出来也能感觉到。</p></article>
+      <article><span>03</span><h3>第一次一起吃饭</h3><p>一顿普通的饭，却成为了我记得很久的一顿饭。因为那时候，坐在我身边的人是你。</p></article>
+      <article><span>04</span><h3>交换彼此的心事</h3><p>谢谢你愿意让我看到你的另一面，也谢谢你听见了我的那些心事。</p></article>
+      <article><span>05</span><h3>第一次接吻</h3><p>有些瞬间很短，却会被记很久。这个瞬间，我想我大概不会忘记。</p></article>
+      <article class="last"><span>06</span><h3>还有很多以后</h3><p>故事还没有结束。所以这里故意留一点空白，等我们以后慢慢写下去。</p></article>
+    </div>
+    <button class="textbtn" onclick="go('gallery')">看看我们一起吃过的饭 <b>→</b></button>
+  </div>
+</section>
+
+<section class="screen" id="gallery">
+  <div class="content">
+    <div class="chapter">04</div><div class="micro">LITTLE MOMENTS</div>
+    <h2>很普通的饭，<br>因为和你一起，就变得特别。</h2>
+    <p class="muted intro">我后来发现，真正想记住的，好像从来都不只是吃了什么。</p>
+    <div class="photos">
+      <figure><img src="images/meal-1.jpg" alt=""><figcaption><b>01</b> 那天的甜点。</figcaption></figure>
+      <figure><img src="images/meal-2.jpg" alt=""><figcaption><b>02</b> 一起吃饭的某一天。</figcaption></figure>
+      <figure><img src="images/meal-3.jpg" alt=""><figcaption><b>03</b> 普通的一顿饭。</figcaption></figure>
+      <figure><img src="images/meal-4.jpg" alt=""><figcaption><b>04</b> 那时候，你就在我对面。</figcaption></figure>
+      <figure><img src="images/meal-5.jpg" alt=""><figcaption><b>05</b> 我想记住的，是那时候。</figcaption></figure>
+    </div>
+    <div class="quote"><span>“</span><p>我想记住的，从来不只是我们吃过什么。</p><strong>而是那时候，坐在我身边的人是你。</strong></div>
+    <button class="textbtn" onclick="go('things')">还有一些以后 <b>→</b></button>
+  </div>
+</section>
+
+<section class="screen" id="things">
+  <div class="content narrow">
+    <div class="chapter">05</div><div class="micro">SOMEDAY</div>
+    <h2>还有一些事情，<br>想和你一起完成。</h2>
+    <p class="muted">不一定什么时候。<br>但我希望，有一天我们会做到。</p>
+    <div class="todo">
+      <label><input type="checkbox"><span><b>01</b> 一起去放一次烟花</span></label>
+      <label><input type="checkbox"><span><b>02</b> 一起去旅行，去一个很远的地方</span></label>
+      <label><input type="checkbox"><span><b>03</b> 一起去游乐园，把想玩的都玩一遍</span></label>
+      <label><input type="checkbox"><span><b>04</b> 一起看一次日落</span></label>
+      <label><input type="checkbox"><span><b>05</b> 一起拍很多很多好看的照片</span></label>
+      <label><input type="checkbox"><span><b>06</b> 去一个我们都没去过的地方</span></label>
+      <label><input type="checkbox"><span><b>07</b> 做一次完全没有计划的事情</span></label>
+    </div>
+    <p class="quiet">还有很多。<br>只是我们还没有全部遇见。</p>
+    <button class="textbtn" onclick="go('letter')">有句话想告诉你 <b>→</b></button>
+  </div>
+</section>
+
+<section class="screen" id="letter">
+  <div class="content narrow center">
+    <div class="chapter">06</div><div class="micro">A FEW WORDS</div>
+    <h2>有句话想告诉你。</h2>
+    <article class="letter">
+      <p>有些人出现在生命里，可能只是一个偶然。</p>
+      <p>可不知道从什么时候开始，我开始期待和你见面，期待你的消息，也开始习惯生活里有你的存在。</p>
+      <p>我不知道我们的故事最后会走到哪里。</p>
+      <p class="pink big">但我很喜欢我们现在的样子。</p>
+      <p>我也不知道以后会发生什么，但我希望那些还没发生的事情里，有一些是和你一起。</p>
+      <p class="muted">所以，不急。</p>
+      <p class="pink huge">我们慢慢走。</p>
+    </article>
+    <button class="textbtn" onclick="go('gift')">还有一个东西 <b>→</b></button>
+  </div>
+</section>
+
+<section class="screen" id="gift">
+  <div class="content center">
+    <div class="chapter">07</div><div class="micro">A LITTLE GIFT</div>
+    <h2>这个是给你的。</h2>
+    <p class="muted">不是什么特别贵重的东西。<br>只是看到它的时候，第一时间想到了你。</p>
+    <div class="gift" onclick="openGift()">
+      <div class="lid"></div><div class="box"></div><div class="band"></div>
+      <div class="bow">✦</div>
+    </div>
+    <div id="giftReveal" class="reveal">
+      <div class="spark">✦</div>
+      <p class="pink">给特别的你，张贞妮。</p>
+      <small>生日快乐 · 8.22</small>
+    </div>
+    <p id="giftHint" class="quiet">点击礼物打开</p>
+    <button class="textbtn" onclick="go('wish')">最后一件事 <b>→</b></button>
+  </div>
+</section>
+
+<section class="screen" id="wish">
+  <div class="content center">
+    <div class="chapter">08</div><div class="micro">YOUR NEXT CHAPTER</div>
+    <h2>在你下一个生日之前，</h2>
+    <p class="muted">你最想完成的一件事情是什么？</p>
+    <textarea id="wishInput" maxlength="120" placeholder="写下一件你想完成的事……"></textarea>
+    <button class="main" onclick="saveWish()">把它留下 <b>✦</b></button>
+    <div id="savedWish" class="saved"></div>
+    <div id="ending" class="ending">
+      <div class="rule"></div>
+      <p>好。</p><p>我帮你记住。</p><p>明年生日，我们再回来看看。</p>
+      <strong>希望那时候，<br>我们已经完成了很多很多事情。</strong>
+      <p class="last-message">有些故事不需要急着定义结局。<br>因为最好的部分，也许正在发生。</p>
+      <small>— 给张贞妮</small>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
