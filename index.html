@@ -2,186 +2,644 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#080b18">
-  <title>写给你的一个小地方</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>8.22 · 给张贞妮</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div id="stars"></div>
-  <div class="glow glow-a"></div>
-  <div class="glow glow-b"></div>
 
-  <main>
-    <!-- 入口 -->
-    <section class="screen active" id="welcome">
-      <div class="eyebrow">A LITTLE PLACE MADE FOR YOU</div>
-      <div class="butterfly big">🦋</div>
-      <h1>写给你的<br><span>一个小地方</span></h1>
-      <p class="lead">这里没有什么特别的东西。<br>只是想留下一些，关于你的东西。</p>
+<body>
+
+  <!-- 背景 -->
+  <div class="background-glow"></div>
+  <div class="stars"></div>
+  <div id="particles"></div>
+
+  <!-- 顶部进度 -->
+  <div class="progress">
+    <div id="progressBar"></div>
+  </div>
+
+  <!-- ================= 首页 ================= -->
+  <section class="screen active" id="home">
+
+    <div class="hero">
+
+      <div class="eyebrow">A LITTLE SECRET FOR YOU</div>
+
+      <div class="butterfly-big">🦋</div>
+
+      <h1>
+        这是一个<br>
+        <span>只属于你的世界。</span>
+      </h1>
+
+      <p class="hero-sub">
+        在继续之前，<br>
+        先告诉我一个只有你知道的答案。
+      </p>
 
       <div class="birthday-box">
-        <p>输入你的生日</p>
-        <div class="date-row">
-          <input id="month" type="number" min="1" max="12" placeholder="月">
-          <span>/</span>
-          <input id="day" type="number" min="1" max="31" placeholder="日">
+
+        <div class="birthday-title">
+          你的生日是？
         </div>
-        <button onclick="openSecret()">打开这个秘密 <span>→</span></button>
-        <div id="error" class="error">再试一次，好像还不是这个日期。</div>
-      </div>
-    </section>
 
-    <!-- 欢迎 -->
-    <section class="screen" id="intro">
-      <div class="small-label">01 · 关于你</div>
+        <div class="date-row">
+          <div class="date-input">
+            <input id="month" type="number" min="1" max="12" placeholder="08">
+            <span>月</span>
+          </div>
+
+          <div class="slash">/</div>
+
+          <div class="date-input">
+            <input id="day" type="number" min="1" max="31" placeholder="22">
+            <span>日</span>
+          </div>
+        </div>
+
+        <button class="main-button" onclick="openSecret()">
+          打开这个秘密
+          <span>→</span>
+        </button>
+
+        <div id="error" class="error">
+          再试一次，好像还不是这个日期。
+        </div>
+
+      </div>
+
+      <div class="hint">
+        08 / 22
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 01 ================= -->
+  <section class="screen" id="intro">
+
+    <div class="section-inner center">
+
+      <div class="section-number">01</div>
+
+      <div class="eyebrow">FOR YOU</div>
+
       <div class="butterfly">🦋</div>
+
       <h2>原来是你。</h2>
-      <p>这是为你留下的<br>一个小小的世界。</p>
-      <p class="personal-note">张贞妮，生日快乐。<br>希望你会喜欢这里。</p>
-      <button class="ghost" onclick="go('about')">继续 <span>↓</span></button>
-    </section>
 
-    <!-- 关于你 -->
-    <section class="screen" id="about">
-      <div class="small-label">02 · 关于你</div>
-      <div class="text-card">
-        <p>你知道吗？</p>
-        <p>第一次见到你的时候，<br>是你来到这个岛上工作的第一天。</p>
-        <p>那天你戴着帽子，走进了餐厅。<br>而那时候的我，装得很高冷，<br>甚至没有主动和你说话。</p>
-        <p>现在回头想想，<br>如果那天的我知道后来会发生什么，<br>大概不会想到——<br>你会慢慢变成一个这么特别的人。</p>
+      <p class="big-text">
+        这是为你留下的<br>
+        一个很小、很安静的世界。
+      </p>
+
+      <div class="gold-line"></div>
+
+      <p class="personal-note">
+        张贞妮<br>
+        生日快乐。
+      </p>
+
+      <p class="muted">
+        希望你打开它的时候，<br>
+        会有一点点开心。
+      </p>
+
+      <button class="ghost" onclick="go('about')">
+        继续
+        <span>↓</span>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 02 初遇 ================= -->
+  <section class="screen" id="about">
+
+    <div class="section-inner">
+
+      <div class="section-number">02</div>
+      <div class="eyebrow">THE BEGINNING</div>
+
+      <h2>故事是从哪里开始的？</h2>
+
+      <div class="story-card">
+
+        <div class="story-date">
+          THE FIRST DAY
+        </div>
+
+        <p>
+          第一次见到你的时候，
+          是你来到这个岛上工作的第一天。
+        </p>
+
+        <p>
+          那天你戴着帽子，
+          走进了餐厅。
+        </p>
+
+        <p>
+          而那时候的我，
+          装得很高冷，
+          甚至没有主动和你说话。
+        </p>
+
+        <div class="story-divider"></div>
+
+        <p class="special-text">
+          如果那时候的我知道，
+          后来会发生这么多事情……
+        </p>
+
+        <p>
+          大概不会想到，
+          那个戴着帽子走进餐厅的人，
+          后来会变成一个
+          对我来说很特别的人。
+        </p>
+
       </div>
-      <button class="ghost" onclick="go('memories')">下一页 <span>→</span></button>
-    </section>
 
-    <!-- 回忆 -->
-    <section class="screen" id="memories">
-      <div class="small-label">03 · 我们的故事</div>
-      <h2>一些我不想忘记的瞬间</h2>
+      <button class="ghost" onclick="go('memories')">
+        下一页
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 03 回忆 ================= -->
+  <section class="screen" id="memories">
+
+    <div class="section-inner">
+
+      <div class="section-number">03</div>
+      <div class="eyebrow">OUR MEMORIES</div>
+
+      <h2>一些我不想忘记的瞬间。</h2>
+
       <div class="memory-list">
+
         <article class="memory">
-          <div class="memory-num">01</div>
+          <span>01</span>
           <h3>第一次谈心</h3>
-          <p>从那一天开始，我发现我们之间不只是认识而已。原来有些话，是可以慢慢说给彼此听的。</p>
+          <p>
+            从那一天开始，我发现我们之间不只是认识而已。
+            原来有些话，是可以慢慢说给彼此听的。
+          </p>
         </article>
+
         <article class="memory">
-          <div class="memory-num">02</div>
+          <span>02</span>
           <h3>第一次靠近</h3>
-          <p>距离变近以后，好像连空气都变得不一样了。有些心情，不需要说出来也能感觉到。</p>
+          <p>
+            距离变近以后，好像连空气都变得不一样了。
+            有些心情，不需要说出来也能感觉到。
+          </p>
         </article>
+
         <article class="memory">
-          <div class="memory-num">03</div>
+          <span>03</span>
           <h3>第一次一起吃饭</h3>
-          <p>一顿普通的饭，却成为了我记得很久的一顿饭。因为那时候，身边的人是你。</p>
+          <p>
+            一顿普通的饭，却成为了我记得很久的一顿饭。
+            因为那时候，坐在我身边的人是你。
+          </p>
         </article>
+
         <article class="memory">
-          <div class="memory-num">04</div>
+          <span>04</span>
           <h3>交换彼此的心事</h3>
-          <p>谢谢你愿意让我看到你的另一面，也谢谢你听见了我的那些心事。</p>
+          <p>
+            谢谢你愿意让我看到你的另一面，
+            也谢谢你听见了我的那些心事。
+          </p>
         </article>
+
         <article class="memory">
-          <div class="memory-num">05</div>
+          <span>05</span>
           <h3>第一次接吻</h3>
-          <p>有些瞬间很短，却会被记很久。这个瞬间，我想我大概不会忘记。</p>
+          <p>
+            有些瞬间很短，却会被记很久。
+            这个瞬间，我想我大概不会忘记。
+          </p>
         </article>
-        <article class="memory">
-          <div class="memory-num">06</div>
+
+        <article class="memory future-memory">
+          <span>06</span>
           <h3>还有很多以后</h3>
-          <p>故事还没有结束，所以这里故意留一点空白，等我们以后慢慢写下去。</p>
+          <p>
+            故事还没有结束。
+            所以这里故意留一点空白，
+            等我们以后慢慢写下去。
+          </p>
         </article>
+
       </div>
-      <button class="ghost" onclick="go('things')">继续 <span>→</span></button>
-    </section>
+
+      <button class="ghost" onclick="go('gallery')">
+        看看我们一起吃过的饭
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </section>
 
 
-    <!-- 一起吃过的饭 -->
-    <section class="screen" id="gallery">
-      <div class="small-label">04 · 我们一起吃过的饭</div>
-      <h2>一些很普通的饭，<br>因为是和你一起，就变得特别。</h2>
+  <!-- ================= 04 照片 ================= -->
+  <section class="screen" id="gallery">
+
+    <div class="section-inner">
+
+      <div class="section-number">04</div>
+      <div class="eyebrow">LITTLE MOMENTS</div>
+
+      <h2>
+        很普通的饭，<br>
+        因为和你一起，就变得特别。
+      </h2>
+
+      <p class="intro-text">
+        我后来发现，真正想记住的<br>
+        好像从来都不只是吃了什么。
+      </p>
+
       <div class="photo-grid">
-        <figure><img src="images/meal-1.jpg" alt="我们一起吃过的饭"><figcaption>那天的甜点。</figcaption></figure>
-        <figure><img src="images/meal-2.jpg" alt="我们一起吃过的饭"><figcaption>一起吃饭的某一天。</figcaption></figure>
-        <figure><img src="images/meal-3.jpg" alt="我们一起吃过的饭"><figcaption>还有很多我们一起吃过的东西。</figcaption></figure>
-        <figure><img src="images/meal-4.jpg" alt="我们一起吃过的饭"><figcaption>普通的一顿饭，也值得记住。</figcaption></figure>
-        <figure><img src="images/meal-5.jpg" alt="我们一起吃过的饭"><figcaption>你在我对面的那些时刻。</figcaption></figure>
-        <figure><img src="images/meal-6.jpg" alt="我们一起吃过的饭"><figcaption>以后还会有很多。</figcaption></figure>
-      </div>
-      <p class="quiet">我想记住的，从来不只是吃了什么。<br>而是那时候，坐在我身边的人是你。</p>
-      <button class="ghost" onclick="go('things')">还有一些以后 <span>→</span></button>
-    </section>
 
-    <!-- 想一起做 -->
-    <section class="screen" id="things">
-      <div class="small-label">05 · 以后</div>
-      <h2>还有一些事情，<br>想和你一起完成。</h2>
+        <figure onclick="openPhoto('images/meal-1.jpg')">
+          <img src="images/meal-1.jpg" alt="我们的回忆">
+          <figcaption>
+            <span>01</span>
+            那天的甜点。
+          </figcaption>
+        </figure>
+
+        <figure onclick="openPhoto('images/meal-2.jpg')">
+          <img src="images/meal-2.jpg" alt="我们的回忆">
+          <figcaption>
+            <span>02</span>
+            一起吃饭的某一天。
+          </figcaption>
+        </figure>
+
+        <figure onclick="openPhoto('images/meal-3.jpg')">
+          <img src="images/meal-3.jpg" alt="我们的回忆">
+          <figcaption>
+            <span>03</span>
+            普通的一顿饭。
+          </figcaption>
+        </figure>
+
+        <figure onclick="openPhoto('images/meal-4.jpg')">
+          <img src="images/meal-4.jpg" alt="我们的回忆">
+          <figcaption>
+            <span>04</span>
+            那时候，你就在我对面。
+          </figcaption>
+        </figure>
+
+        <figure onclick="openPhoto('images/meal-5.jpg')">
+          <img src="images/meal-5.jpg" alt="我们的回忆">
+          <figcaption>
+            <span>05</span>
+            我想记住的，是那时候。
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <div class="photo-message">
+        <div class="quote-mark">“</div>
+
+        <p>
+          我想记住的，从来不只是<br>
+          我们吃过什么。
+        </p>
+
+        <strong>
+          而是那时候，<br>
+          坐在我身边的人是你。
+        </strong>
+
+      </div>
+
+      <button class="ghost" onclick="go('things')">
+        还有一些以后
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 05 以后 ================= -->
+  <section class="screen" id="things">
+
+    <div class="section-inner">
+
+      <div class="section-number">05</div>
+      <div class="eyebrow">SOMEDAY</div>
+
+      <h2>
+        还有一些事情，<br>
+        想和你一起完成。
+      </h2>
+
+      <p class="intro-text">
+        不一定什么时候。<br>
+        但我希望，有一天我们会做到。
+      </p>
+
       <div class="todo">
-        <label><input type="checkbox"> <span>一起去放一次烟花</span></label>
-        <label><input type="checkbox"> <span>一起去旅行，去一个很远的地方</span></label>
-        <label><input type="checkbox"> <span>一起去游乐园，把所有想玩的都玩一遍</span></label>
-        <label><input type="checkbox"> <span>一起看一次日落</span></label>
-        <label><input type="checkbox"> <span>一起拍很多很多好看的照片</span></label>
-        <label><input type="checkbox"> <span>去一个我们都没去过的地方</span></label>
-        <label><input type="checkbox"> <span>做一次完全没有计划的事情</span></label>
-      </div>
-      <p class="quiet">还有很多。<br>只是我们还没有全部遇见。</p>
-      <button class="ghost" onclick="go('letter')">有句话想告诉你 <span>→</span></button>
-    </section>
 
-    <!-- 信 -->
-    <section class="screen" id="letter">
-      <div class="small-label">06 · 有句话想告诉你</div>
+        <label>
+          <input type="checkbox">
+          <span>
+            <b>01</b>
+            一起去放一次烟花
+          </span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>
+            <b>02</b>
+            一起去旅行，去一个很远的地方
+          </span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>
+            <b>03</b>
+            一起去游乐园，把想玩的都玩一遍
+          </span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>
+            <b>04</b>
+            一起看一次日落
+          </span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>
+            <b>05</b>
+            一起拍很多很多好看的照片
+          </span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>
+            <b>06</b>
+            去一个我们都没去过的地方
+          </span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>
+            <b>07</b>
+            做一次完全没有计划的事情
+          </span>
+        </label>
+
+      </div>
+
+      <p class="quiet">
+        还有很多。<br>
+        只是我们还没有全部遇见。
+      </p>
+
+      <button class="ghost" onclick="go('letter')">
+        有句话想告诉你
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 06 信 ================= -->
+  <section class="screen" id="letter">
+
+    <div class="section-inner">
+
+      <div class="section-number">06</div>
+      <div class="eyebrow">A FEW WORDS</div>
+
+      <h2>有句话想告诉你。</h2>
+
       <div class="letter-card">
-        <p>有些人出现在生命里，<br>可能只是一个偶然。</p>
-        <p>可不知道从什么时候开始，<br>我开始期待和你见面，<br>期待你的消息，<br>也开始习惯生活里有你的存在。</p>
-        <p>我不知道我们的故事最后会走到哪里。</p>
-        <p class="highlight">但我很喜欢我们现在的样子。</p>
-        <p>我也不知道以后会发生什么，<br>但我希望那些还没发生的事情里，<br>有一些是和你一起。</p>
-        <p>所以，不急。</p>
-        <p class="highlight">我们慢慢走。</p>
-      </div>
-      <button class="ghost" onclick="go('gift')">还有一个东西 <span>→</span></button>
-    </section>
 
-    <!-- 礼物 -->
-    <section class="screen" id="gift">
-      <div class="small-label">07 · 给你的礼物</div>
+        <p>
+          有些人出现在生命里，
+          可能只是一个偶然。
+        </p>
+
+        <p>
+          可不知道从什么时候开始，
+          我开始期待和你见面，
+          期待你的消息，
+          也开始习惯生活里有你的存在。
+        </p>
+
+        <p>
+          我不知道我们的故事
+          最后会走到哪里。
+        </p>
+
+        <div class="letter-highlight">
+          但我很喜欢我们现在的样子。
+        </div>
+
+        <p>
+          我也不知道以后会发生什么，
+          但我希望那些还没发生的事情里，
+          有一些是和你一起。
+        </p>
+
+        <p class="small-ending">
+          所以，不急。
+        </p>
+
+        <div class="letter-highlight final-highlight">
+          我们慢慢走。
+        </div>
+
+      </div>
+
+      <button class="ghost" onclick="go('gift')">
+        还有一个东西
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 07 礼物 ================= -->
+  <section class="screen" id="gift">
+
+    <div class="section-inner center">
+
+      <div class="section-number">07</div>
+      <div class="eyebrow">A LITTLE GIFT</div>
+
+      <h2>这个是给你的。</h2>
+
+      <p class="intro-text">
+        不是什么特别贵重的东西。<br>
+        只是看到它的时候，第一时间想到了你。
+      </p>
+
       <div class="gift-wrap" onclick="openGift()">
+
+        <div class="gift-glow"></div>
+
         <div class="gift-box">
+
           <div class="lid"></div>
           <div class="box"></div>
-          <div class="ribbon"></div>
-        </div>
-        <div class="gift-butterfly" id="giftButterfly">🦋</div>
-      </div>
-      <h2 id="giftTitle">这个是给你的。</h2>
-      <p id="giftText">不是什么特别贵重的东西。<br>只是看到它的时候，第一时间想到了你。</p>
-      <div id="giftReveal" class="reveal">
-        <div class="fake-jewel">✦ 🦋 ✦</div>
-        <p><strong>给特别的你，张贞妮。</strong></p>
-        <p class="tiny">希望你会喜欢。</p>
-      </div>
-      <button class="ghost" onclick="go('wish')">最后一件事 <span>→</span></button>
-    </section>
 
-    <!-- 愿望 -->
-    <section class="screen" id="wish">
-      <div class="small-label">08 · 明年的今天</div>
-      <div class="butterfly">🦋</div>
-      <h2>在你下一个生日之前，</h2>
-      <p class="lead">你最想完成的一件事情是什么？</p>
-      <textarea id="wishInput" maxlength="120" placeholder="写下一件你想完成的事……"></textarea>
-      <button onclick="saveWish()">把它留下</button>
-      <div id="savedWish" class="saved"></div>
-      <div class="ending" id="ending">
-        <p>好。</p>
-        <p>我帮你记住。</p>
-        <p>明年生日，我们再回来看看。</p>
-        <div class="final-line">希望那时候，<br>我们已经完成了很多很多事情。</div>
-        <div class="final-butterfly">🦋</div>
+          <div class="ribbon vertical"></div>
+          <div class="ribbon horizontal"></div>
+
+        </div>
+
+        <div class="gift-butterfly">
+          🦋
+        </div>
+
       </div>
-    </section>
-  </main>
+
+      <div id="giftReveal" class="reveal">
+
+        <div class="sparkle">✦</div>
+
+        <p class="gift-name">
+          给特别的你，张贞妮。
+        </p>
+
+        <p>
+          希望你会喜欢。
+        </p>
+
+        <div class="tiny">
+          生日快乐 · 8.22
+        </div>
+
+      </div>
+
+      <p id="giftHint" class="quiet">
+        点击礼物打开
+      </p>
+
+      <button class="ghost" onclick="go('wish')">
+        最后一件事
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= 08 愿望 ================= -->
+  <section class="screen" id="wish">
+
+    <div class="section-inner center">
+
+      <div class="section-number">08</div>
+      <div class="eyebrow">YOUR NEXT CHAPTER</div>
+
+      <div class="butterfly">🦋</div>
+
+      <h2>
+        在你下一个生日之前，
+      </h2>
+
+      <p class="lead">
+        你最想完成的一件事情是什么？
+      </p>
+
+      <textarea
+        id="wishInput"
+        maxlength="120"
+        placeholder="写下一件你想完成的事……"
+      ></textarea>
+
+      <button class="main-button" onclick="saveWish()">
+        把它留下
+        <span>✦</span>
+      </button>
+
+      <div id="savedWish" class="saved"></div>
+
+      <div class="ending" id="ending">
+
+        <div class="gold-line"></div>
+
+        <p>好。</p>
+
+        <p>我帮你记住。</p>
+
+        <p>明年生日，我们再回来看看。</p>
+
+        <div class="final-line">
+          希望那时候，<br>
+          我们已经完成了很多很多事情。
+        </div>
+
+        <div class="final-message">
+          有些故事不需要急着定义结局。<br>
+          因为最好的部分，<br>
+          也许正在发生。
+        </div>
+
+        <div class="final-butterfly">
+          🦋
+        </div>
+
+        <div class="signature">
+          — 给张贞妮
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 图片放大 -->
+  <div id="photoModal" class="photo-modal" onclick="closePhoto()">
+    <button class="close-photo">×</button>
+    <img id="modalImage" src="" alt="">
+  </div>
+
+
+  <!-- 小提示 -->
+  <div id="toast"></div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
